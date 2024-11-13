@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Collection</title>
+</head>
+<body>
+    <h1>Book Collection</h1>
+    <input id="title" placeholder="Title">
+    <input id="author" placeholder="Author">
+    <button onclick="addBook()">Add Book</button>
+    <div id="books"></div>
+
+    <script>
+        // Функция для отображения списка книг
+        async function fetchBooks() {
+            const response = await fetch('/api/books');
+            const books = await response.json();
+            document.getElementById('books').innerHTML = books.map(book =>
+                `<div>${book.title} by ${book.author}</div>`
+            ).join('');
+        }
+
+        // Функция для добавления книги
+        async function addBook() {
+            const book = {
+                title: document.getElementById('title').value,
+                author: document.getElementById('author').value
+            };
+            await fetch('/api/books', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(book)
+            });
+            fetchBooks();
+        }
+
+        fetchBooks();
+    </script>
+</body>
+</html>
