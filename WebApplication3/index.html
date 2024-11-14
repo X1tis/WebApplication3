@@ -12,7 +12,11 @@
     <div id="books"></div>
 
     <script>
+<<<<<<< HEAD
         // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
+=======
+        // Функция для отображения списка книг
+>>>>>>> 749cea81cfecef3c9f564dd82a9b71fd9247e98f
         async function fetchBooks() {
             const response = await fetch('/api/books');
             const books = await response.json();
@@ -21,7 +25,11 @@
             ).join('');
         }
 
+<<<<<<< HEAD
         // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+=======
+        // Функция для добавления книги
+>>>>>>> 749cea81cfecef3c9f564dd82a9b71fd9247e98f
         async function addBook() {
             const book = {
                 title: document.getElementById('title').value,
