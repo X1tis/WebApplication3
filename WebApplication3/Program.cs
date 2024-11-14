@@ -3,7 +3,7 @@ using BookApp.Data;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseUrls("http://localhost:44301"); // Замените на нужный порт
+builder.WebHost.UseUrls("https://localhost:7293"); // Замените на нужный порт
 
 
 // Настраиваем DbContext с использованием SQLite
